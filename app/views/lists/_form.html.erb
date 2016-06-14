@@ -1,0 +1,43 @@
+<%= form_for(@list) do |f| %>
+  <% if @list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+
+      <ul>
+      <% @list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_field :descripcion %>
+  </div>
+  <!-- select group catagoria/subcategoria -->
+  <div class="field">
+    <%= f.label 'Categoría' %><br>
+    <%= f.select :subcategory_id, grouped_options_for_select(@subcategory_options,@list.subcategory_id),{prompt: 'Escoja opción'}, {required: true} %> <!-- include_blank: true -->
+  </div>
+<!-- Select separados categoriaysubcategoría
+   <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.select :category_id,@category_options %>
+  </div>
+  
+  <div class="field">
+  <%= f.label :subcategory_id %><br>  
+    <% @subcategory_options.each do |cat| %>      
+      <%= f.select :subcategory_id, cat,{},{class: :aaa}%>  
+    <% end %>
+  </div> -->
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

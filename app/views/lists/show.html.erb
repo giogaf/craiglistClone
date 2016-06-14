@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @list.titulo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @list.descripcion %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @list.category.nombre %>
+</p>
+
+<p>
+  <strong>Subcategory:</strong>
+  <%= @list.subcategory.nombre %>
+</p>
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>
