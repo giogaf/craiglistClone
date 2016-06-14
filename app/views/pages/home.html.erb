@@ -1,2 +1,10 @@
 <h1>Craig list clone</h1>
 <p>ROR Development</p>
+
+<% @category.each do |c|%>
+	<%= c.nombre.upcase %> ||>>
+	<% Subcategory.where(category_id:c.id).each do |sc| %>
+	<%= sc.nombre.capitalize %>
+	<% end %>
+	<br>
+<% end %>
