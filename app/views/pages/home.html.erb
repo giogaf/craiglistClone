@@ -2,9 +2,9 @@
 <p>ROR Development</p>
 
 <% @category.each do |c|%>
-	<%= c.nombre.upcase %> ||>>
+	<%= link_to c.nombre.upcase, c %> ||>>
 	<% Subcategory.where(category_id:c.id).each do |sc| %>
-	<%= sc.nombre.capitalize %>
+	
 	<% end %>
 	<br>
 <% end %>

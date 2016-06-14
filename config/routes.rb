@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+
   root 'pages#home'
 
   get 'pages/about'
 
   get 'pages/contact'
+
+  get 'categories/:id' => 'categories#show',as: :category
+
+  get 'categories/:category_id/subcategories/:id' => 'subcategories#show', as: :category_subcategory
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

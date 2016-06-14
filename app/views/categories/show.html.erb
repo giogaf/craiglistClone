@@ -1,0 +1,6 @@
+<h1><%= @category.nombre.upcase %></h1>
+<ul>
+	<% Subcategory.where(category_id:@category.id).each do |sc| %>
+	<li><%= link_to sc.nombre,category_subcategory_path(@category,sc) %></li>
+	<% end %>
+</ul>
