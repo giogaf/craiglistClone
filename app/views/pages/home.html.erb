@@ -4,7 +4,7 @@
 <% @category.each do |c|%>
 	<%= link_to c.nombre.upcase, c %> ||>>
 	<% Subcategory.where(category_id:c.id).each do |sc| %>
-	
+	<%= link_to sc.nombre,category_subcategory_path(c,sc) %>
 	<% end %>
 	<br>
 <% end %>

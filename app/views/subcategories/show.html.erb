@@ -1,2 +1,5 @@
 <h1><%= @category_name.upcase%></h1>
-<p><%= @subcategory.nombre %></p>
+<p>Subcategoria: <%= @subcategory.nombre.capitalize %></p>
+<%= render '/lists/index' %>
+<br>
+<%= link_to 'Regresar',@category%>
